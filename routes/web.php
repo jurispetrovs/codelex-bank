@@ -17,6 +17,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+
+    Route::get('/overview', 'AccountsController@index')->name('overview');
+
+    Route::get('/open-an-account', function () {
+        return view('accounts.open-an-account');
+    })->name('open-an-account');
+
+    Route::get('/payment', function () {
+        return view('payment');
+    })->name('payment');
+
+    Route::resource('accounts', 'AccountsController')->except([
+        'index', 'create', 'edit'
+    ]);
+
+    Route::resource('transactions', 'TransactionsController')->only([
+        'store', 'update', 'destroy'
+    ]);
+
+});
