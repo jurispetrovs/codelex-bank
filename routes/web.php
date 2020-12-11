@@ -30,11 +30,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     })->name('payment');
 
     Route::resource('accounts', 'AccountsController')->except([
-        'index', 'create', 'edit'
+        'index', 'create', 'edit', 'destroy'
     ]);
 
     Route::resource('transactions', 'TransactionsController')->only([
-        'store', 'update', 'destroy'
+        'store'
     ]);
 
 });

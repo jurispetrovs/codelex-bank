@@ -50,14 +50,4 @@ class TransactionsController extends Controller
 
         return redirect(route('overview'));
     }
-
-    public function show(Transaction $transaction)
-    {
-        //
-    }
-
-    public function edit(Transaction $transaction)
-    {
-        //
-    }
 }

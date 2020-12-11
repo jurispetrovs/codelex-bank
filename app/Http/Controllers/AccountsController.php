@@ -46,11 +46,4 @@ class AccountsController extends Controller
             'account' => $account
         ]);
     }
-
-    public function destroy(Account $account)
-    {
-        $account->delete();
-
-        return redirect(route('overview'));
-    }
 }
