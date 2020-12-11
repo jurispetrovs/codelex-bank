@@ -85,7 +85,7 @@
                                         </td>
                                         <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">{{ $account->debitTransactions->contains($transaction) ? $transaction->toAccountHolder()->first()->getNameAndSurname() : $transaction->fromAccountHolder()->first()->getNameAndSurname() }}</td>
                                         <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">{{ $transaction->description }}</td>
-                                        <td class="px-6 py-4 whitespace-no-wrap border-b text-{{ $account->debitTransactions->contains($transaction) ? 'green' : 'red' }}-900 font-bold border-gray-500 text-sm leading-5">{{ $account->debitTransactions->contains($transaction) ? '+' : '-' }}{{ $transaction->getAmount() }}</td>
+                                        <td class="px-6 py-4 whitespace-no-wrap border-b text-{{ $account->debitTransactions->contains($transaction) ? 'green' : 'red' }}-900 font-bold border-gray-500 text-sm leading-5">{{ $account->debitTransactions->contains($transaction) ? '+' : '-' }}{{ $account->debitTransactions->contains($transaction) ? $transaction->getExchangedAmount() : $transaction->getAmount() }}</td>
                                     </tr>
                                 @endforeach
 

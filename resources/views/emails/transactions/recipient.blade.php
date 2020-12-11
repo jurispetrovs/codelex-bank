@@ -118,7 +118,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="esd-block-text" align="center">
-                                                                <p style="color: #64434a; font-size: 16px; line-height: 150%;">From: {{ $transaction->sender_account_number }}<br>To: {{ $transaction->recipient_account_number }}<br>Amount: {{ $transaction->getAmount() }}<br>Description: {{ $transaction->description }}</p>
+                                                                <p style="color: #64434a; font-size: 16px; line-height: 150%;">From: {{ $transaction->sender_account_number }}<br>To: {{ $transaction->recipient_account_number }}<br>Amount: {{ $transaction->getExchangedAmount() }}<br>Description: {{ $transaction->description }}</p>
                                                             </td>
                                                         </tr>
                                                         <tr>
