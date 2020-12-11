@@ -44,6 +44,9 @@
                                             <option value="" disabled selected>Choose an currency</option>
                                             <option value="USD">USD</option>
                                             <option value="EUR">EUR</option>
+                                            <option value="GBP">GBP</option>
+                                            <option value="RUB">RUB</option>
+                                            <option value="AUD">AUD</option>
                                         </select>
                                         <label for="currency" class="absolute tracking-wide py-2 px-4 mb-4 opacity-0 leading-tight block top-0 left-0 cursor-text">
                                             Currency
