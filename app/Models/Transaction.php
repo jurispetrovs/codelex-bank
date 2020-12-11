@@ -15,11 +15,14 @@ class Transaction extends Model
         'recipient_id',
         'recipient_account_number',
         'amount',
+        'exchanged_amount',
         'description'
     ];
 
     protected $casts = [
-        'amount' => 'integer'
+        'amount' => 'integer',
+        'exchanged_amount' => 'integer'
+
     ];
 
     public function fromAccount()
@@ -45,5 +48,10 @@ class Transaction extends Model
     public function getAmount()
     {
         return number_format(($this->amount/100),2);
+    }
+
+    public function getExchangedAmount()
+    {
+        return number_format(($this->exchanged_amount/100),2);
     }
 }
